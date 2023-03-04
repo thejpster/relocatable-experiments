@@ -1,0 +1,6 @@
+static
+pic
+pie
+ropi
+rwpi
+ropi-rwpi
