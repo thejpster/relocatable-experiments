@@ -9,25 +9,25 @@
 
 MEMORY
 {
-    /* 124K starting at 4K */
-    SRAM (rwx) : ORIGIN = 0x20001000, LENGTH = 0x0001F000
+    CODE (rx) : ORIGIN = 0x30000000, LENGTH = 128K
+    DATA (rw)  : ORIGIN = 0x40000000, LENGTH = 128K
 }
 
 EXTERN(ENTRY_POINT);
 
 SECTIONS
 {
-    .entry ORIGIN(SRAM) :
+    .entry ORIGIN(CODE) :
     {
         KEEP(*(.entry_point))
-    } > SRAM
+    } > CODE
 
     .text :
     {
         *    (.text .text.*)
         *    (.init)
         *    (.fini)
-    } > SRAM
+    } > CODE
 
     .rodata : ALIGN(4)
     {
@@ -36,24 +36,24 @@ SECTIONS
            This is required by LLD to ensure the LMA of the following .data
            section will have the correct alignment. */
         . = ALIGN(4);
-    } > SRAM
+    } > CODE
 
     .data : ALIGN(4)
     {
         *    (.data .data.*)
         . = ALIGN(4);
-    }  > SRAM
+    } > DATA
 
     .bss (NOLOAD) : ALIGN(4)
     {
         *    (.bss .bss.*)
         . = ALIGN(4);
-    } > SRAM
+    } > DATA
 
     .got : ALIGN(4)
     {
         KEEP(*(.got .got.*));
-    }
+    } > DATA
 
     /* ## Discarded sections */
     /DISCARD/ :

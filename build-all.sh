@@ -9,4 +9,5 @@ done
 # Generate some dissassembly to look at
 for i in ./target/*/debug/rtest; do
     llvm-objdump -C -t -T -r -d -S -s $i > $i.asm
+    readelf -C -all $i > $i.txt
 done
