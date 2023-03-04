@@ -1,0 +1,56 @@
+[target.thumbv6m-none-eabi]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-static]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-pic]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-pie]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-dynamic-no-pic]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-ropi]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-rwpi]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-ropi-rwpi]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[target.thumbv6m-neotron-neotron-default]
+rustflags = [
+  "-C", "link-arg=-Tneotron-app.ld",
+  "-C", "link-args=--emit-relocs",
+]
+
+[unstable]
+build-std = ["core"]
