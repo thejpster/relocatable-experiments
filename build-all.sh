@@ -3,7 +3,7 @@
 # Build with all known ~~frequencies~~ relocations
 for i in `cat relocations.txt`; do
     echo "****** $i ********"
-    cargo build --target=thumbv6m-neotron-neotron-$i.json
+    cargo +nightly build --target=thumbv6m-neotron-neotron-$i.json
 done   
 
 # Generate some dissassembly to look at
