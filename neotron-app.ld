@@ -14,6 +14,7 @@ MEMORY
 }
 
 EXTERN(ENTRY_POINT);
+ENTRY(entry_point);
 
 SECTIONS
 {
