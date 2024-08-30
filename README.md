@@ -4,7 +4,7 @@ To re-run these test builds, type:
 
 ```console
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-$ source ~/.cargo/bin/env
+$ source ~/.cargo/env
 $ rustup toolchain install nightly
 $ rustup component add rust-src --toolchain=nightly
 $ ./build-all.sh
